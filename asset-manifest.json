@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/star-wars-hero-search/static/css/main.ea83d9f7.css",
+    "main.js": "/star-wars-hero-search/static/js/main.a5120e43.js",
+    "index.html": "/star-wars-hero-search/index.html",
+    "main.ea83d9f7.css.map": "/star-wars-hero-search/static/css/main.ea83d9f7.css.map",
+    "main.a5120e43.js.map": "/star-wars-hero-search/static/js/main.a5120e43.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ea83d9f7.css",
+    "static/js/main.a5120e43.js"
+  ]
+}
