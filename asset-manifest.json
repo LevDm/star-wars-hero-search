@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/star-wars-hero-search/static/css/main.d28e1555.css",
-    "main.js": "/star-wars-hero-search/static/js/main.d80d3d03.js",
+    "main.css": "/star-wars-hero-search/static/css/main.4802bdd8.css",
+    "main.js": "/star-wars-hero-search/static/js/main.35c476fe.js",
     "index.html": "/star-wars-hero-search/index.html",
-    "main.d28e1555.css.map": "/star-wars-hero-search/static/css/main.d28e1555.css.map",
-    "main.d80d3d03.js.map": "/star-wars-hero-search/static/js/main.d80d3d03.js.map"
+    "main.4802bdd8.css.map": "/star-wars-hero-search/static/css/main.4802bdd8.css.map",
+    "main.35c476fe.js.map": "/star-wars-hero-search/static/js/main.35c476fe.js.map"
   },
   "entrypoints": [
-    "static/css/main.d28e1555.css",
-    "static/js/main.d80d3d03.js"
+    "static/css/main.4802bdd8.css",
+    "static/js/main.35c476fe.js"
   ]
 }
