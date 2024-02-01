@@ -71,44 +71,50 @@ function App() {
     if (data?.length === 0 && !isLoading) return <p>Ничего не найдено</p>;
 
     return data?.map((el) => (
-      <div>
+      <div className={"person-card"}>
         <h2>{el.name}</h2>
         {OUTPUT_FIELDS.map((info) => (
           <p>
             {info.field}: {convert(el[info.key], info.key)}
           </p>
         ))}
-        <p>{`Фильмов с участием персонажа: ${el.films.length} шт.`}</p>
+        <p>{`Количество фильмов с участием героя: ${el.films.length} шт.`}</p>
       </div>
     ));
   };
 
   return (
-    <div>
-      <div>
-        <input
-          ref={inputRef}
-          type="text"
-          placeholder="Например Luke Skywalker"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          onKeyDown={handleKeyPress}
-        />
-        {searchTerm && (
-          <div>
-            <button onClick={handleResetTerm}>X</button>
-            <button onClick={handleSearch}>Найти</button>
-          </div>
-        )}
-      </div>
-
-      {isLoading && (
-        <div>
-          <p>Поиск...</p>
+    <div className="app">
+      <div
+        className={`search-area ${
+          data === null ? "search-area-d" : "search-area-u"
+        }`}
+      >
+        <div className="search-row">
+          <input
+            ref={inputRef}
+            type="text"
+            placeholder="Поиск героев Star Wras, например Luke Skywalker"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            onKeyDown={handleKeyPress}
+          />
+          {searchTerm && (
+            <div className="search-buttons">
+              <button onClick={handleResetTerm}>X</button>
+              <button onClick={handleSearch}>Найти</button>
+            </div>
+          )}
+          {isLoading && (
+            <div className="search-state">
+              <div className="dot"></div>
+              <div className="dot"></div>
+              <div className="dot"></div>
+            </div>
+          )}
         </div>
-      )}
-
-      <div>{renderData()}</div>
+      </div>
+      <div className="search-result">{renderData()}</div>
     </div>
   );
 }
