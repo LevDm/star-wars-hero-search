@@ -102,7 +102,7 @@ function App() {
             <input
               ref={inputRef}
               type="text"
-              placeholder="Поиск героев Star Wras, например Luke Skywalker"
+              placeholder="Поиск героев Star Wars, например Luke Skywalker"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               onKeyDown={handleKeyPress}
