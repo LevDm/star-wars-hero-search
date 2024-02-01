@@ -3,7 +3,7 @@ import { Person } from './types';
 
 
 export const useSearchPerson = () => {
-    const [searchResult, setSearchResult] = useState<Person[] | null>(null);
+    const [searchResult, setSearchResult] = useState<{data: Person[] | null, searchTerm: string | null}>({data: null, searchTerm: null});
     const [loading, setLoading] = useState(false);
 
     const fetchData = useCallback(async (searchTerm: string) => {
@@ -12,15 +12,15 @@ export const useSearchPerson = () => {
             const response = await fetch(`https://swapi.dev/api/people/?search=${searchTerm}`);
             const data = await response.json();
 
-            setSearchResult(data.results);
+            setSearchResult({data: data.results, searchTerm: searchTerm});
 
         } catch (error) {
             console.error('Error fetching data:', error);
-            setSearchResult(null);
+            setSearchResult({data: null, searchTerm: searchTerm});
         } finally {
             setLoading(false);
         }
     }, [])
 
-    return { data: searchResult, fetchData: fetchData, isLoading: loading};
+    return { data: searchResult.data, fetchData: fetchData, isLoading: loading, currentSearchTerm: searchResult.searchTerm};
 };

@@ -46,14 +46,11 @@ function App() {
 
   const [searchTerm, setSearchTerm] = useState<string>("");
 
-  const { data, fetchData, isLoading } = useSearchPerson();
+  const { data, fetchData, isLoading, currentSearchTerm } = useSearchPerson();
 
   const handleSearch = () => {
     if (inputRef.current) inputRef.current.blur();
-    if (searchTerm.length > 0 && !isLoading) {
-      fetchData(searchTerm);
-    } else {
-    }
+    if (searchTerm.length > 0 && !isLoading) fetchData(searchTerm);
   };
 
   const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -110,7 +107,9 @@ function App() {
             {searchTerm && (
               <div className="search-buttons">
                 <button onClick={handleResetTerm}>X</button>
-                <button onClick={handleSearch}>Найти</button>
+                {searchTerm !== currentSearchTerm && (
+                  <button onClick={handleSearch}>Найти</button>
+                )}
               </div>
             )}
             {isLoading && (
