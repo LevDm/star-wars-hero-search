@@ -84,38 +84,43 @@ function App() {
   };
 
   return (
-    <div className="app">
-      <div
-        className={`search-area ${
-          data === null ? "search-area-d" : "search-area-u"
-        }`}
-      >
-        <div className="search-row">
-          <input
-            ref={inputRef}
-            type="text"
-            placeholder="Поиск героев Star Wras, например Luke Skywalker"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            onKeyDown={handleKeyPress}
-          />
-          {searchTerm && (
-            <div className="search-buttons">
-              <button onClick={handleResetTerm}>X</button>
-              <button onClick={handleSearch}>Найти</button>
-            </div>
-          )}
-          {isLoading && (
-            <div className="search-state">
-              <div className="dot"></div>
-              <div className="dot"></div>
-              <div className="dot"></div>
-            </div>
-          )}
+    <>
+      {data === null && (
+        <img className="image-bg" src="/img/bg.jpg" alt=""></img>
+      )}
+      <div className="app">
+        <div
+          className={`search-area ${
+            data === null ? "search-area-d" : "search-area-u"
+          }`}
+        >
+          <div className="search-row">
+            <input
+              ref={inputRef}
+              type="text"
+              placeholder="Поиск героев Star Wras, например Luke Skywalker"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              onKeyDown={handleKeyPress}
+            />
+            {searchTerm && (
+              <div className="search-buttons">
+                <button onClick={handleResetTerm}>X</button>
+                <button onClick={handleSearch}>Найти</button>
+              </div>
+            )}
+            {isLoading && (
+              <div className="search-state">
+                <div className="dot"></div>
+                <div className="dot"></div>
+                <div className="dot"></div>
+              </div>
+            )}
+          </div>
         </div>
+        <div className="search-result">{renderData()}</div>
       </div>
-      <div className="search-result">{renderData()}</div>
-    </div>
+    </>
   );
 }
 

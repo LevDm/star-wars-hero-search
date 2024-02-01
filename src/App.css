@@ -3,9 +3,17 @@
   min-height: 90vh;
 }
 
+.image-bg {
+  height: 100%;
+  width: 100%;
+  opacity: 0.12;
+  position: absolute;
+  z-index: 0;
+  object-fit: cover
+}
+
 .search-area {
   display: flex;
-  background-color: white;
   position: sticky;
   padding: 1rem;
   height: min-content;
@@ -17,8 +25,9 @@
 }
 .search-area-u {
   top: 0;
+  background-color: white;
   border-bottom: 1px solid #4285F440;
-  transition: top, border-bottom 0.45s ease;
+  transition: top, border-bottom, background-color 0.45s ease;
 }
 
 .search-row {
