@@ -86,7 +86,11 @@ function App() {
   return (
     <>
       {data === null && (
-        <img className="image-bg" src="/img/bg.jpg" alt=""></img>
+        <img
+          className="image-bg"
+          src="https://vkplay.ru/hotbox/content_files/Stories/2023/09/20/72f3ecacea2f4634bdee297e6e406f69.jpg"
+          alt=""
+        ></img>
       )}
       <div className="app">
         <div

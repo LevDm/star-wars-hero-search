@@ -9,7 +9,8 @@
   opacity: 0.12;
   position: absolute;
   z-index: 0;
-  object-fit: cover
+  object-fit: cover;
+  pointer-events: none;
 }
 
 .search-area {
